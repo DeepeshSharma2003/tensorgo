@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+
+.navbar {
+  background: #1c1d22;
+  font-family: "Varela Round", sans-serif;
+}
+
+.navbar .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 8px;
+
+}
+
+.navbar .menu li {
+  width: 10vw;
+  text-align: center;
+}
+
+.navbar .menu li a {
+  font-size: 20px;
+  color: #777;
+  text-decoration: none;
+  transition: all 0.45s;
+}
+
+
+.navbar .menu li:hover a {
+  color: #d94f5c;
+}
