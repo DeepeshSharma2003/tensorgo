@@ -1,17 +1,20 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { AuthProvider } from './authcontext'; 
+import axios from 'axios';
+
 import Login from './components/login';
 import SuperAdminDashboard from './components/superadmindashboard';
 import AdminDashboard from './components/admindashboard';
 import UserPage from './components/userpage';
-import PlanCard from './components/plancard'; 
-import axios from 'axios';
+import PlanCard from './components/plancard';
+import Signup from './components/signup';
+import Navbar from './components/navbar';
 
 function App() {
   const [plans, setPlans] = useState([]);
-  // const userId = 17; 
 
   const fetchPlans = async () => {
     try {
@@ -56,40 +59,45 @@ function App() {
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route
-          path="/super-admin-dashboard"
-          element={
-            <SuperAdminDashboard
-              plans={plans}
-              addPlan={addPlan}
-              updatePlan={updatePlan}
-              deletePlan={deletePlan}
-              renderPlans={() =>
-                plans.map((plan) => (
-                  <PlanCard
-                    key={plan.plan_id}
-                    plan_id={plan.plan_id}
-                    plan_name={plan.plan_name}
-                    min_users={plan.min_users}
-                    max_users={plan.max_users}
-                    price={plan.price}
-                    trial_days={plan.trial_days}
-                  />
-                ))
-              }
-            />
-          }
-        />
-        <Route path="/admin-dashboard" element={<AdminDashboard />} />
-        <Route path="/user-page" element={<UserPage />} />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          
+          <Route path="/" element={<><Signup /></>} />
+          <Route path="/login" element={<><Login /></>} />
+          <Route
+            path="/super-admin-dashboard"
+            element={
+              <>
+                <Navbar /> 
+                <SuperAdminDashboard
+                  plans={plans}
+                  addPlan={addPlan}
+                  updatePlan={updatePlan}
+                  deletePlan={deletePlan}
+                  renderPlans={() =>
+                    plans.map((plan) => (
+                      <PlanCard
+                        key={plan.plan_id}
+                        plan_id={plan.plan_id}
+                        plan_name={plan.plan_name}
+                        min_users={plan.min_users}
+                        max_users={plan.max_users}
+                        price={plan.price}
+                        trial_days={plan.trial_days}
+                      />
+                    ))
+                  }
+                />
+              </>
+            }
+          />
+          <Route path="/admin-dashboard" element={<><Navbar /><AdminDashboard /></>} />
+          <Route path="/user-page" element={<><Navbar /><UserPage /></>} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
 export default App;
-
-

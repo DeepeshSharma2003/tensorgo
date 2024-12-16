@@ -13,16 +13,25 @@ router.post('/addsub', async (req, res) => {
     try {
         const subscription = await createSubscription(req.body);
 
-      
+        const { sub_id, org_id, plan_id, start_date, end_date, is_active, users_allowed, users_added } = subscription;
+
         res.status(201).json({
             message: 'Subscription created successfully',
-            sub_id: subscription.sub_id, 
+            sub_id, 
+            org_id,
+            plan_id,
+            start_date,
+            end_date,
+            is_active,
+            users_allowed,
+            users_added,
             data: subscription
         });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 
 

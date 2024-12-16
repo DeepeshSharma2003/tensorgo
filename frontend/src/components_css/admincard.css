@@ -1,0 +1,67 @@
+/* AdminCard CSS */
+
+.admin-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    margin-top: 30px; /* Added margin-top to space it from the top */
+    width: 320px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center; /* Center content inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-card h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .admin-card .details {
+    margin-bottom: 16px;
+  }
+  
+  .admin-card .details p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 4px 0;
+  }
+  
+  .admin-card .details strong {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .admin-card .children {
+    margin-top: 16px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  

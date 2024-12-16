@@ -18,6 +18,7 @@ const PlanCard = ({ plan_id, plan_name, min_users, max_users, price, trial_days,
   );
 };
 
+
 PlanCard.propTypes = {
   plan_id: PropTypes.number.isRequired,
   plan_name: PropTypes.string.isRequired,

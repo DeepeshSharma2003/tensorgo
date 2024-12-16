@@ -1,0 +1,105 @@
+
+#signup-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f7f7f7, #ffffff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  #signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  #signup-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  #signup-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  #signup-form input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  }
+  
+  #signup-form button {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  #signup-form button:hover {
+    background: #0056b3;
+  }
+  
+  #signup-form button:active {
+    background: #003f7f;
+  }
+  
+  #signup-form div {
+    margin-bottom: 15px;
+  }
+  
+  #signup-form input::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+  #signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+
+  #account-exists {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #account-exists p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  #account-exists button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #account-exists button:hover {
+    background-color: #0056b3;
+  }
+  
